@@ -345,7 +345,7 @@ export class {{classname}} extends BaseAPI {
      * @throws {RequiredError}
      * @memberof {{classname}}
      */
-    public {{nickname}}({{#allParams}}{{paramName}}{{^required}}?{{/required}}: {{{dataType}}}, {{/allParams}}options?: any) {
+    public {{nickname}}({{#allParams}}{{paramName}}{{^required}}?{{/required}}: {{{dataType}}}, {{/allParams}}options?: any): AxiosPromise<{{#returnType}}{{{returnType}}}{{/returnType}}{{^returnType}}{}{{/returnType}}> {
         return {{classname}}Fp(this.configuration).{{nickname}}({{#allParams}}{{paramName}}, {{/allParams}}options)(this.axios, this.basePath);
     }
 
